@@ -1,0 +1,6 @@
+# WSL-specific overrides.
+
+if [[ -d "$ZSH/plugins/wsl" || -d "$ZSH_CUSTOM/plugins/wsl" ]]; then
+  plugins+=(wsl)
+fi
+

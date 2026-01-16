@@ -1,0 +1,11 @@
+# Managed by Shell Bootstrap Kit.
+# Put login-only personal changes in: ~/.zprofile.local
+
+if [[ -f "$HOME/.zprofile.platform" ]]; then
+  source "$HOME/.zprofile.platform"
+fi
+
+if [[ -f "$HOME/.zprofile.local" ]]; then
+  source "$HOME/.zprofile.local"
+fi
+
