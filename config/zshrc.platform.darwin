@@ -1,0 +1,9 @@
+# macOS-specific overrides (keep this file safe: no secrets).
+
+plugins+=(macos)
+
+# Homebrew (macOS)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+

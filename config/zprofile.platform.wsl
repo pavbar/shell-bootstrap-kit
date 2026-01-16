@@ -1,0 +1,7 @@
+# WSL login shell overrides.
+
+# If you later install Linuxbrew, this enables it when present.
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+

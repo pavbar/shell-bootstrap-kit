@@ -1,0 +1,4 @@
+# Linux-specific overrides (non-WSL).
+
+# Add Linux-only plugins here if you install them under oh-my-zsh.
+
