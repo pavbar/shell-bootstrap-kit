@@ -33,6 +33,16 @@ If you plan to publish this as a git repo, move this folder out of `fel-notes/tm
 
 Those files are not managed by this repo.
 
+Templates:
+- `config/zshrc.local.template` - copy to `~/.zshrc.local`
+
+## Homebrew bundle (macOS)
+This repo includes a minimal `Brewfile` you can extend.
+
+```bash
+brew bundle install
+```
+
 ## Platform selection
 `scripts/deploy.sh` detects:
 - `darwin` - macOS

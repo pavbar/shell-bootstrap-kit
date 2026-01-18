@@ -1,0 +1,34 @@
+# Local overrides for this machine. Copy to ~/.zshrc.local and edit.
+# Keep secrets out of this file.
+
+# Homebrew behavior (optional)
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# PostgreSQL (Homebrew) - optional
+if [[ -d /opt/homebrew/opt/postgresql@17/bin ]]; then
+  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+fi
+
+# Codex helper (optional)
+FOLIO_DIR="$HOME/pb-notes"
+FOLIO_MODEL="gpt-5.2"
+folio-core() {
+  command codex \
+    --model "$FOLIO_MODEL" \
+    --cd "$FOLIO_DIR" \
+    --add-dir "$HOME/workspaces" \
+    "$@"
+}
+
+# ai-agent-toolkit sync helper (optional)
+aat-sync() {
+  local repo="${AAT_REPO:-}"
+  if [[ -z "$repo" ]]; then
+    repo="$(git -C "$PWD" rev-parse --show-toplevel 2>/dev/null || true)"
+  fi
+  if [[ -z "$repo" ]]; then
+    echo "error: set AAT_REPO or run from inside the repo" >&2
+    return 1
+  fi
+  "$repo/scripts/sync_all.sh"
+}
