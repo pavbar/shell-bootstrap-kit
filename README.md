@@ -21,9 +21,20 @@ This repo contains no secrets. Keep secrets out of `~/.zshrc.local` too.
 From the repo root:
 
 ```bash
-scripts/deploy.sh
+scripts/install.sh
 exec zsh
 ```
+
+If you want Homebrew packages installed on macOS (optional):
+
+```bash
+scripts/install.sh --with-brew
+exec zsh
+```
+
+oh-my-zsh update behavior:
+- Default: normal oh-my-zsh update checks (may prompt).
+- To enable auto-update (no prompts), run `scripts/install.sh --enable-omz-auto-update` or add `zstyle ':omz:update' mode auto` to `~/.zshrc.local`.
 
 If you plan to publish this as a git repo, move this folder out of `fel-notes/tmp/` first.
 
