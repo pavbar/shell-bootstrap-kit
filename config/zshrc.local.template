@@ -30,5 +30,8 @@ aat-sync() {
     echo "error: set AAT_REPO or run from inside the repo" >&2
     return 1
   fi
-  "$repo/scripts/sync_all.sh"
+  (
+    cd "$repo" || exit 1
+    command aat sync
+  )
 }
